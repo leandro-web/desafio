@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>S2it</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+        .jumbotron {height: 340px;}
+    </style>
+    <script>
+        function a1() {
+            var c = document.getElementById("j2").innerHTML;
+            if (c > 0) {
+                document.getElementById("j2").innerHTML = c - 20;
+                if (c == 20) {
+                    document.getElementById("a1").style.display = "block";
+                }
+            }else{
+                alert("Reinicie o jogo");
+            }
+
+        }
+
+        function a2() {
+            var c = document.getElementById("j1").innerHTML;
+            if (c > 0) {
+                document.getElementById("j1").innerHTML = c - 20;
+                if (c == 20) {
+                    document.getElementById("a2").style.display = "block";
+                }
+            }else{
+                alert("Reinicie o jogo");
+            }
+        }
+
+        function reiniciar() {
+            document.getElementById("j1").innerHTML = 100;
+            document.getElementById("j2").innerHTML = 100;
+            document.getElementById("a1").style.display = "none";
+            document.getElementById("a2").style.display = "none";
+        }
+    </script>
+</head>
+
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <p class="bg-primary text-center" id="a1" style="display: none">O JOGADOR 01 GANHOU.</p>
+            <p class="bg-primary text-center" id="a2" style="display: none">O JOGADOR 02 GANHOU.</p>
+            <div class="col-md-6 text-center">
+                <h4>JOGADOR 01</h4>
+                <h4>VIDA: <span id="j1">100</span>%</h4>
+                <p><a class="btn btn-primary btn-lg" onclick="a1()" role="button">ATACAR</a></p>
+            </div>
+            <div class="col-md-6 text-center">
+                <h4>JOGADOR 02</h4>
+                <h4>VIDA: <span id="j2">100</span>%</h4>
+                <p><a class="btn btn-primary btn-lg" onclick="a2()" role="button">ATACAR</a></p>
+            </div>
+            <div class="col-md-2 col-md-offset-5">
+                <p><a class="btn btn-primary btn-lg btn-block" onclick="reiniciar()" role="button">REINICIAR</a></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
